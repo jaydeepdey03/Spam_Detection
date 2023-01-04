@@ -12,7 +12,7 @@ tfidf = pickle.load(open('./Model/vectorizer.pkl', 'rb'))
 
 @app.route('/')
 def func():
-    return 'Its working'
+    return "Its working"
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -26,4 +26,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(host="0.0.0.0",port= 5000)
