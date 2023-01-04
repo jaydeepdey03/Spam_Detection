@@ -10,6 +10,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 model = pickle.load(open('./Model/model.pkl', 'rb'))
 tfidf = pickle.load(open('./Model/vectorizer.pkl', 'rb'))
 
+@app.route('/')
+def func():
+    return 'Its working'
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
