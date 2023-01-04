@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.url_map.strict_slashes = False
 
 model = pickle.load(open('./Model/model.pkl', 'rb'))
 tfidf = pickle.load(open('./Model/vectorizer.pkl', 'rb'))
