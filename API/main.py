@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
-import pandas
-import pickle
+import pandas,pickle
 from Controllers import transformText
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
