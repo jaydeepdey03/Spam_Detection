@@ -1,7 +1,8 @@
 from flask import Flask, jsonify, request
 import pandas,pickle
 from Controllers import transformText
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
+from waitress import serve
 app = Flask(__name__)
 
 cors = CORS(app)
@@ -27,4 +28,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port= 5000)
+    serve(app, host='0.0.0.0', port=80)
